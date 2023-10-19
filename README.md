@@ -84,7 +84,7 @@ Additional included results:
 - `source_type`
 - `status`
 
-Please check api_examples for all Api Examples and Code.
+# Please check api_examples for all Api Examples and Code.
 
 # Image Prediction (Prompting):
 Image Prompting allows users to upload an image and receive an AI-generated prediction regarding its content. Users can engage in a conversation with the AI about the image's content, making it an interactive experience. Supported image formats for this functionality are: `.jpg`, `.jpeg`, and `.png`.
