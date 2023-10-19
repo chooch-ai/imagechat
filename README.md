@@ -4,7 +4,7 @@
 #### _Created by Chooch Intelligence Technologies Co._
 
 
-ImageChat is Chooch’s latest cutting-edge model that provides more detailed insights into visual images with staggering accuracy. Our new ensemble model combines computer vision and large language models to provide you with the best possible results. ImageChat-3 has over 11 billion parameters and a 5x image database improvement compared to previous versions. This enables improved conversations, multi-language support, and better image analysis. For more information on the release and an example use case, [read more on ImageChat][bloglink].
+ImageChat is Chooch’s latest cutting-edge Multimodal and Multilingual LLM Vision model that provides more detailed insights into visual images with staggering accuracy. Our new ensemble model combines computer vision and large language models to provide you with the best possible results. ImageChat-3 has over 11 billion parameters and a 5x image database improvement compared to previous versions. This enables improved conversations, multi-language support, and better image analysis. For more information on the release and an example use case, [read more on ImageChat][bloglink].
 
 ## Examples
 Please see the Jupyter Notebooks Examples in _api\_examples/_ for information on how to use the ImageChat-3 API. Below we will describe the functionality and expected results. 
