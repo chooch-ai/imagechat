@@ -84,6 +84,7 @@ Additional included results:
 - `source_type`
 - `status`
 
+
 Please check api_examples for all Api Examples and Code.
 
 # Image Prediction (Prompting):
