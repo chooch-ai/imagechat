@@ -11,11 +11,11 @@ Please see the Jupyter Notebooks Examples in _api\_examples/_ for information on
 
 ## Functionality
 There are 5 core component features of ImageChat-3 API that enable everything from Image analysis to multi-language conversation. See below:
-- [Image](#Image)
-- [Text](#Text)
-- [Document (Beta)](#Document)
-- [Vision](#Vision)
-- [Workflow](#Workflow)
+- [Image Prediction](#image-prediction-prompting)
+- [Text Prediction](#text-prediction-prompting)
+- [Document Prediction (Beta)](#document-prediction-prompting---beta)
+- [Workflow Prediction](#workflow-prediction)
+- [Vision Prediction](#vision-prediction)
 
 ## Post Request to ImageChat-3
 Analyzing an image, document, text, etc. with ImageChat-3 is easy and allows for customizable parameters with each api call. Each post request includes a set of parameters in a JSON payload, in addition with the file you want to analyze, and your Chooch API Key. In each example in _api\_examples/_ you will see a corresponding post request that includes these 3 parameters and the ImageChat-3 url. 
