@@ -92,17 +92,17 @@ Please check api_examples for full Api Examples and Code.
 # Image Prediction (Prompting):
 Image Prompting allows users to upload an image and receive an AI-generated prediction regarding its content. Users can engage in a conversation with the AI about the image's content, making it an interactive experience. Supported image formats for this functionality are: `.jpg`, `.jpeg`, and `.png`.
 
-# Text Prediction (Prompting):
-Text Prediction is designed for those who wish to initiate a dialogue directly with the AI without the need for an image. Simply input your text, and the AI will generate a response, facilitating a seamless conversational experience. 
-
-# Document Prediction (Prompting) - Beta:
-Document Prediction enables users to upload text-based files, which the AI will generate a prediction about the document's content. Not only does this offer insights into the document, but users can also chat with the AI about the content, enhancing understanding and clarity. The supported formats for this feature are `.txt`, `.pdf`, `.doc`, `.docx`, `.ppt`, `.pptx`, `.csv`, `.xls`, and `.xlsx`.
-
 # Workflow Prediction:
 The Workflow Prediction offers an advanced fusion of object detection models with ImageChat capabilities. Users have the flexibility to combine the ImageChat LLM Vision Model with Chooch's ReadyNow Models or even integrate their own Custom Object Detection models. This ensures detailed and specific results.  For instance, you can create a Workflow by writing  the prompt "is there any person with a backpack?", followed by integrating Chooch's General Object Detection 4.0 (80) model with the "person" class.  The AI will first identify the "person" and then direct the prompt question exclusively to that identified person cut out.
 
 # Vision Prediction:
 This section provides a standalone API designed for those who have existing custom object detection models or are utilizing Chooch's ReadyNow models. It serves as a dedicated platform to execute and analyze predictions derived from these models.
+
+# Text Prediction (Prompting):
+Text Prediction is designed for those who wish to initiate a dialogue directly with the AI without the need for an image. Simply input your text, and the AI will generate a response, facilitating a seamless conversational experience. 
+
+# Document Prediction (Prompting) - Beta:
+Document Prediction enables users to upload text-based files, which the AI will generate a prediction about the document's content. Not only does this offer insights into the document, but users can also chat with the AI about the content, enhancing understanding and clarity. The supported formats for this feature are `.txt`, `.pdf`, `.doc`, `.docx`, `.ppt`, `.pptx`, `.csv`, `.xls`, and `.xlsx`.
 
 
 ## Behind ImageChat-3
