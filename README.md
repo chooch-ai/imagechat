@@ -1,5 +1,178 @@
 
 [![ImageChat](https://www.chooch.com/wp-content/uploads/2023/10/ImageChatLogo.png)](https://www.chooch.com/) 
+
+# ImageChat self-hosted installation guide
+
+This guide will walk you through how to install ImageChat-3 on your local device.  You will be able to utilize all of ImageChat’s capabilities from your local environment. This step-by-step process will have you up and running quickly. Please review the necessary installation prerequisites before beginning. For support during the setup process, contact [support@chooch.com](mailto:support@chooch.com).
+
+> You must have a [AI Vision Studio](https://app.chooch.ai/app/home-page/) account in order to retrieve your API Key. If you do not have an account, [sign up](https://app.chooch.ai/feed/sign_up) to create a free one.
+
+# Software requirements
+
+Minimum requirements
+
+- **Compatible Operating Systems:** Ubuntu ≥ 20.04 LTS
+- **Docker Version:** 24.0.6
+- **Docker Compose Plugin Version:** v2.21.0
+- **GCC Version:** 9.4.0
+- **NVIDIA Docker:** 2.13.0
+- **NVIDIA Driver:** 535.54.03
+- **NVIDIA CUDA:** 12.2.0
+
+# Hardware requirements
+
+Minimum requirements
+
+- **Compatible Graphics Card Platforms:** T4, A10, A30, A100
+- **GPU Memory:** Min 16 GB
+- **Compatible Processors:** 
+  - 8th to 13th generation Intel® Core™ > i7 (suggested i9)
+  - 3rd generation Intel® Xeon® Scalable processors
+- **Memory:** Min 64GB RAM
+- **Disk:** 256GB SSD Drive
+
+# Installation prerequisites
+
+### Docker Runtime installation
+
+***Note** *  You can skip this step, if Docker is already installed on your system.
+```bash
+curl https://get.docker.com | sh
+
+sudo systemctl --now enable docker
+
+# To add current user to sudo group (for later docker usage without sudo)​
+
+sudo /usr/sbin/usermod -aG docker $USER
+
+sudo reboot
+```
+
+### Docker Compose plugin installation
+
+[Install](https://docs.docker.com/compose/install/linux/) the Docker Compose plugin.
+
+
+***Note** *  You can skip this step, if **Docker Compose plugin** is already installed on your system.
+
+```bash
+sudo apt-get update
+
+sudo apt-get install docker-compose-plugin
+
+docker compose version
+```
+
+### NVIDIA Driver installation
+
+***Note** *   You can skip this step, if **NVIDIA Driver(v535)** is already installed on your system.
+
+```bash
+sudo apt update
+
+sudo apt install nvidia-driver-535
+
+sudo reboot
+```
+
+### NVIDIA Docker installation
+
+***Note** * You can skip this step, if **NVIDIA Driver(v535)** is already installed on your system.
+
+```bash
+. /etc/os-release
+
+export distribution="${ID}${VERSION_ID}"
+
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.li
+
+sudo apt-get update
+
+sudo apt-get install -y nvidia-docker2
+
+sudo systemctl restart docker
+```
+
+# ImageChat-3 installation guide
+
+1. [Log in](https://app.chooch.ai/feed/login) to your Chooch AI Vision Studio account and retrieve your API Key located at the bottom of the homepage.
+
+    ![API Key](./api_examples/files/api_key.png)
+
+
+2. Enter the following script along with your API key into your terminal and follow the instructions.
+   You must have a [AI Vision Studio](https://app.chooch.ai/app/home-page/) account in order to retrieve your API Key. If you do not have an account, sign up to create a free one. 
+
+    ```bash 
+       bash -c "$(curl http://get.chooch.ai/imagechat)" -s -k api_key
+    ```
+
+3. When prompted “Enter your hostname/IP address of your device,” input the IP address for the device, such as an AWS EC2 Elastic IP or public IP address.
+
+       You can access the front-end application within 5-10 minutes.
+    
+      **Quantize model** (optional): The available parameters are “yes” or “no,” with the default set to “yes.” Quantized model allows ImageChat-3 to perform optimally on lower grade GPU’s.
+
+      #### Default environment ports
+        - Frontend: 8000
+        - Backend API: 7234
+        - ImageChat API: 80
+        - Postgres: 5432
+        - Watchtower: 8081
+        - MongoDB: 27017
+        - Chooch Minio: 9003 and 9004
+        - Triton Inference: 8062 and 8063 and 8064
+        - MilvusDB: 19530 and 9091
+
+4. After gaining access to the interface, set up your username and password to log in.  
+         ![login](api_examples/files/imagechat-selfhosted-login-signup.png)
+
+
+5. Once logged in, you can start using the **“New Chat”** button or upload a file by clicking the “+” icon.
+
+    ![New Chat](api_examples/files/new-chat.png)
+
+
+6. ImageChat is now set up. You can begin creating prompts to engage with the image or document you have uploaded. ImageChat enables language contextual search of images, documents, and video streams supported file types are below.
+    #### Supported file types
+   Document file types: .pdf, .doc, .docx, .ppt, .pptx, .csv, .xls, .xlsx, .txt
+   Image file types: .jpg, jpeg, .png
+
+
+## How to use ImageChat
+
+1. In the menu bar on the left, you can view your most recent chat history or delete chat entries from this list.
+   ![Chat History](api_examples/files/usage-1.png)
+
+
+2. By selecting your username in the upper right hand corner of the dashboard, you can access the “Settings and Documentation” pages.
+
+   On the “Settings” page, there are two tabs. Under “General Settings,” you can check the system status and upgrade to the latest version of the software.
+
+   ***Note** * To view the new version indicator and update the software, an internet connection is required.
+   ![Chat History](api_examples/files/usage-2.png)
+
+
+3. On the “Account Settings” tab, you have the option to replace the current logo with your own as well as update your company name and email.
+   ![Chat History](api_examples/files/usage-3.png)
+
+## How to uninstall ImageChat
+If needed, you can uninstall ImageChat from your local device by following these steps.
+
+1. Remove containers and volumes.
+    ```bash
+    docker compose down -v --remove-orphans
+    ```
+2. Delete persistent data folder.
+    ```bash
+   sudo rm -rf /app/chooch_imagechat/
+    ```
+   
+## Support
+If you have any additional questions, please contact [support@chooch.com](mailto:support@choochcom) .
+
 # ImageChat-3 API Documentation
 #### _Created by Chooch Intelligence Technologies Co._
 
