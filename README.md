@@ -39,7 +39,7 @@ parameters["prompt"] = prompt
 
 
 # Optional language parameter 
-# parameters["lang"] = "es"
+# parameters["lang"] = "en"
 
 # Optional maximum new tokens setting
 #parameters["max_new_tokens"] = 512
@@ -48,7 +48,7 @@ Usage in python takes the provided parameters and builds a post request with the
 
 ```
 # Path to your file
-file_path = "files/recognize-man.jpg"
+file_path = "files/example.jpg"
 
 # Set Model as ImageChat-3
 model_id = "chooch-image-chat-3"
@@ -72,7 +72,16 @@ Get your API Key by siging up to a free account at [https://app.chooch.ai/](http
 ## Expected Results
 
 ```js
-{'model_title': 'Chooch-ImageChat-3', 'model_id': 'Chooch-ImageChat-3', 'prediction': 'La imagen muestra a un hombre con un chaleco de seguridad y un casco acostado en el suelo junto a un conjunto de escaleras. El hombre parece herido o angustiado, ya que sostiene su cabeza en sus manos. Las escaleras están hechas de metal y se encuentran en un gran almacén o en un entorno industrial.', 'prediction_type': 'Chooch-ImageChat-3-Image', 'prompt': 'Describe this image in detail', 'source_id': '2dbe8831-eb66-4769-9df4-0478c54c14f0.jpg', 'source_type': 'image', 'status': 'Successful Prediction'
+{
+   "model_title":"Chooch-ImageChat-3",
+   "model_id":"Chooch-ImageChat-3",
+   "prediction":"The image depicts a man lying on the floor in a warehouse, surrounded by various objects and equipment. He is wearing a safety vest and a hard hat, indicating that he is working in a potentially hazardous environment. The man is holding his head in his hands, suggesting that he may be experiencing some discomfort or pain. There are several large boxes and shelves in the background, which could indicate that the man is working in a warehouse or storage facility. Overall, the image conveys a sense of caution and attention to safety in the workplace.",
+   "prediction_type":"Chooch-ImageChat-3-Image",
+   "prompt":"Describe this image in detail",
+   "source_id":"fc5de4b2-896b-4567-afe7-324376a49c3c.jpg",
+   "source_type":"image",
+   "status":"Successful Prediction"
+}
 ```
 Each result is a JSON object that includes:
 - `prediction` _This will be the verbal analysis in the requested language_
